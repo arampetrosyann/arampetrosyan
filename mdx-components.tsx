@@ -16,7 +16,7 @@ const components: MDXComponents = {
     <h4 className="text-lg font-medium" {...props} />
   ),
   hr: (props: ComponentPropsWithoutRef<'hr'>) => (
-    <hr className="border-none h-0.5 mx-1 my-4 bg-text opacity-60" {...props} />
+    <hr className="border-none h-px mt-10 bg-text opacity-20" {...props} />
   ),
   p: (props: ComponentPropsWithoutRef<'p'>) => (
     <p className="my-4.5 text-text leading-snug" {...props} />
