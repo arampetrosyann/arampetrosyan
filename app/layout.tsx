@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Script from 'next/script'
 import { Inter } from 'next/font/google'
-import { GoogleAnalytics } from '@next/third-parties/google'
 import clsx from 'clsx'
 import { baseUrl } from '@/utils/common'
 import './globals.css'
@@ -54,10 +54,21 @@ const Layout = ({
     className={clsx(inter.variable, 'font-sans')}
   >
     <body className="max-w-180 mx-auto antialiased">
+      {gaId ? (
+        <>
+          <Script async src={`https://www.googletagmanager.com/gtm.js?id=${gaId}`} />
+          <Script id="gtag-init" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            `}
+          </Script>
+        </>
+      ) : null}
       <Header />
       <main className="px-6 py-2 md:p-4">{children}</main>
     </body>
-    {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
   </html>
 )
 
