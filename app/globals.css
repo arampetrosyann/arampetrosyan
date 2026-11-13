@@ -1,0 +1,90 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #fafafa;
+  --main-color: #171717;
+  --secondary-color: #164e9d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-text: var(--main-color);
+  --color-secondary: var(--secondary-color);
+  --font-sans: var(--font-inter);
+  --height-main-screen: calc(100vh - 12rem);
+  --breakpoint-xs: 28rem;
+}
+
+* {
+  user-select: none;
+  outline-color: #164e9d2a;
+}
+
+html {
+  min-width: 360px;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  background: var(--background);
+  font-size: 1rem;
+  color: var(--color-text);
+  text-rendering: optimizeLegibility;
+}
+
+input[type='text'],
+input[type='email'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::selection {
+  background-color: var(--secondary-color);
+  color: var(--background);
+}
+
+p,
+p > *,
+blockquote,
+blockquote > *,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figcaption {
+  user-select: text;
+}
+
+code {
+  user-select: all;
+}
+
+.writing-content {
+  margin-top: 1.5rem;
+}
+
+.writing-content * {
+  user-select: text;
+}
+
+.writing-content :is(img, video, iframe) {
+  user-select: none;
+}
+
+.tlink {
+  @apply text-secondary hover:underline;
+}

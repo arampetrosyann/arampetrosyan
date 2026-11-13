@@ -1,0 +1,13 @@
+/node_modules
+/coverage
+/.next/
+/out/
+/build
+next-env.d.ts
+npm-debug.log*
+*.tsbuildinfo
+.env.development
+.env.production
+.env.local
+.DS_Store
+TODO

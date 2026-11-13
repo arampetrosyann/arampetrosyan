@@ -1,0 +1,86 @@
+export const details = {
+  title: 'Historic Software Failures',
+  date: '2026-11-11T18:36:29.505Z',
+  published: true,
+  description: 'Software failures that led to disastrous outcomes',
+}
+
+The importance of software quality assurance is well known. It helps identify bugs, prevent unexpected behavior and ensure that software works as intended.
+Nevertheless, software failures may still occur, sometimes leading to devastating consequences.
+
+Software is everywhere. It runs our phones, powers aircraft, controls medical equipment and guides spacecraft through space.
+While a bug in an everyday application might cause a minor inconvenience, a failure in a [critical system](https://en.wikipedia.org/wiki/Critical_system) can result in serious financial losses, destroyed equipment or even loss of life.
+
+Throughout history, various software failures have led to major disasters.
+Let's take a look at some of the most notable incidents and what went wrong.
+
+## Therac-25: Software that Killed
+
+<img src="/therac-25.png" alt="Therac-25" className="max-w-64 mx-auto" />
+
+In the 1980s, Therac-25, a radiation therapy machine developed by Atomic Energy of Canada Limited (AECL), was used to treat cancer patients. It was a computer-controlled medical accelerator designed to destroy cancer cells by delivering controlled doses of radiation while limiting damage to surrounding healthy tissue.
+
+The machine supported two treatment modes. In electron mode, a beam of electrons was spread out and delivered directly to the patient to treat relatively shallow tumors. In X-ray mode, a much more intense electron beam was directed at a metal target to produce X-rays capable of treating deeper tumors. A rotating mechanism called a turntable positioned the appropriate components in the beam's path, while software controlled the treatment settings and monitored the machine's operation.
+
+Between 1985 and 1987, the Therac-25 was involved in several known accidents in which patients received massive radiation overdoses, causing serious injuries and deaths.
+
+### Behind the Failure
+
+Unlike earlier models, the Therac-25 relied more heavily on software to maintain safety, rather than on independent hardware safeguards.
+This made software defects particularly dangerous.
+One such defect was a race condition, where the program's behavior depended on the timing of operations.
+
+In one accident, a technician mistakenly selected X-ray mode and quickly changed it to electron mode.
+Due to a software synchronization error, the machine failed to update its configuration correctly, leaving it set to produce a dangerously intense radiation beam.
+As a result, the patient received a massive radiation overdose.
+
+## Ariane 5: Software that Destroyed a Rocket
+
+In 1996, the European Ariane 5 rocket was launched on its first flight.
+Shortly after liftoff, things went terribly wrong, and the rocket was destroyed.
+
+The surprising part? The failure was caused by software that had previously worked successfully.
+
+### The Underlying Problem
+
+The Ariane 5 reused software from its predecessor, Ariane 4.
+One part of this software was responsible for calculations related to the rocket's alignment and horizontal velocity.
+The problem was that Ariane 5 had different flight characteristics, including a much higher horizontal velocity.
+A calculation that had worked for Ariane 4 produced a value that exceeded the range the software could handle.
+This caused an integer overflow during conversion, triggering a chain of events that ultimately led to the rocket's destruction.
+
+Notably, the problem had not been discovered during testing because the software had not been tested using the actual flight conditions of Ariane 5.
+
+## Mars Climate Orbiter: Lost without a Trace
+
+<img
+  src="/mars-climate-orbiter.jpg"
+  alt="Mars Climate Orbiter"
+  className="max-w-64 mx-auto"
+/>
+
+In December 1998, NASA launched the Mars Climate Orbiter, a spacecraft designed to study the Martian atmosphere and climate from orbit and serve as a communications relay for other Mars missions.
+
+After traveling for approximately nine months, the spacecraft approached Mars in 1999.
+However, instead of successfully entering its planned orbit, it disappeared behind the planet and never re-established contact.
+Investigations indicated that the spacecraft had approached Mars at a dangerously low altitude and was eventually destroyed in its atmosphere.
+
+### Behind the Failure
+
+The main problem was surprisingly simple: two software systems were using different units of measurement.
+
+One software system produced navigation-related data in imperial units (pound-seconds), while another expected metric units (newton-seconds).
+This mismatch, involving a conversion factor of approximately 4.45, caused errors in trajectory calculations.
+
+The spacecraft's asymmetric design also contributed to the problem.
+Its thrusters fired more frequently than expected, and each firing slightly changed the spacecraft's trajectory.
+Over time, the accumulated errors caused the spacecraft to drift away from its intended trajectory and approach Mars far too closely.
+
+A seemingly simple mismatch in measurement units ultimately contributed to the loss of an entire spacecraft.
+
+## Sources
+
+- N. G. Leveson and C. S. Turner, "An investigation of the Therac-25 accidents"
+- X. Papademetris, A. N. Quraishi and G. P. Licholai, "Introduction to Medical Software: Foundations for Digital Health, Devices, and Diagnostics", Cambridge University Press
+- M. Pezzè and M. Young, "Software Testing and Analysis: Process, Principles, and Techniques"
+- P. B. Ladkin, "The Ariane 5 Accident: A Programming Problem?"

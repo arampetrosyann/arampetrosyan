@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2026 Aram Petrosyan
+#
+# SPDX-License-Identifier: MIT
+
+version = 1
+SPDX-PackageName = "arampetrosyan.com"
+
+# code
+[[annotations]]
+path = ["**"]
+SPDX-FileCopyrightText = "2026 Aram Petrosyan"
+SPDX-License-Identifier = "MIT"
+
+# writings and media
+[[annotations]]
+path = ["content/**", "public/media/**"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Aram Petrosyan"
+SPDX-License-Identifier = "CC-BY-4.0"
