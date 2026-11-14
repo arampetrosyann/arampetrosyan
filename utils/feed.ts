@@ -7,7 +7,6 @@ export const generateFeed = async () => {
 
   const author = {
     name: 'Aram Petrosyan',
-    email: 'petrosyan.aram@hotmail.com',
     link: baseUrl,
   }
 

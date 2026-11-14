@@ -65,7 +65,9 @@ const Home = () => (
         .
       </p>
       <div className="md:col-start-2 flex flex-col gap-2">
-        <p>Contact: petrosyan.aram@hotmail.com</p>
+        <p>
+          Contact: <span>petrosyan</span>.<span>aram</span>@hotmail<span>.com</span>
+        </p>
         <div className="flex items-center gap-2">
           {socials.map(({ icon: Icon, url, className }) => (
             <a
